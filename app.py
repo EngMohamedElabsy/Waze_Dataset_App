@@ -48,10 +48,14 @@ if st.button("توقع حالة المستخدم"):
         'device': [device_encoded]
     })
     
-    prediction = model.predict(input_data)
+    # الإصلاح الذكي من غير ما نغير شكل النتيجة بتاعتك
+    probabilities = model.predict_proba(input_data)[0]
+    churn_probability = probabilities[0] 
     
     st.markdown("---")
-    if prediction[0] == 1 or prediction[0] == 'retained':
-        st.success("🎉 النتيجة: المستخدم سيستمر في استخدام التطبيق (Retained)")
-    else:
+    
+    # لو احتمالية المغادرة عدت 20% هيطبع الرسالة الحمراء بتاعتك
+    if churn_probability > 0.20:
         st.error("⚠️ النتيجة: المستخدم سيغادر التطبيق (Churned)")
+    else:
+        st.success("🎉 النتيجة: المستخدم سيستمر في استخدام التطبيق (Retained)")
