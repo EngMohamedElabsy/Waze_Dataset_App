@@ -24,6 +24,7 @@ Using an advanced **XGBoost** model 🧠 trained on the Waze dataset, this app p
 3. Select the device type 📱
 4. Click on **"توقع حالة المستخدم"** 🔮
 5. See the magic happen! ✨
-
+---
+### 🌍 [**Click Here to View the Live App!**](https://wazedatasetapp-l4ampyc7y56bf4ipj9wie5.streamlit.app/)
 ---
 *Developed with ❤️ by Eng. Mohamed Elabsy* 👨‍💻🚀
